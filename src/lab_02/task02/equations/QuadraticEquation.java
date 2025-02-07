@@ -5,27 +5,25 @@ import lab_02.task02.equations.Equation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuadraticEquation implements Equation {
-    List<Double> coefficients;
+public class QuadraticEquation extends Equation {
+    Double a;
 
     @Override
     public void printEquation() {
-        String line = String.format("%.1f*x^2 + %.1f*x + %.1f = 0\n", coefficients.get(0), coefficients.get(1), coefficients.get(2));
+        String line = String.format("%.1f*x^2 + %.1f*x + %.1f = 0\n", a, b, c);
         System.out.printf(line);
     }
 
     public QuadraticEquation(List<Double> coefficients) {
-        this.coefficients = coefficients;
+        super(coefficients.subList(1, coefficients.size()));
+        a = coefficients.getFirst();
     }
 
     @Override
     public List<Double> solve() {
-        if (coefficients.size() == 3 && coefficients.get(0) == 0 && coefficients.get(1) == 0 &&
-                coefficients.get(2) == 0) return null;
-        Double a = coefficients.get(0);
-        Double b = coefficients.get(1);
-        Double c = coefficients.get(2);
-        Double D = b*b - 4*a*c;
+        if (a==0) return super.solve();
+
+        double D = b*b - 4*a*c;
         if (D < 0) return new ArrayList<Double>();
         if (D == 0) return List.of(-b/2/a);
         return List.of((Double) (-b + Math.sqrt(D))/2/a, (Double) (-b - Math.sqrt(D))/2/a);

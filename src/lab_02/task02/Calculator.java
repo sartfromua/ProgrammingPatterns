@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class Calculator {
     public static void main(String[] args) throws Exception {
+
         EquationFactory calculator = new EquationFactory();
         List<Equation> equations = new ArrayList<>();
         FileReader fileReader = new FileReader("D:\\IdeaProjects\\ProgrammingPatterns\\src\\lab_02\\task02\\input01.txt");
@@ -26,6 +27,7 @@ public class Calculator {
                 coefficients.add(Double.parseDouble(str));
             }
 
+            System.out.println(coefficients);
             equations.add(calculator.buildEquation(coefficients));
         }
         fileReader.close();
