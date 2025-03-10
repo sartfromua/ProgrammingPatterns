@@ -8,7 +8,7 @@ public class PostComaDecorator extends BaseDecorator{
 
 	@Override
 	public void print() {
-		printable.print();
+		super.print();
 		System.out.print(",");
 	}
 }

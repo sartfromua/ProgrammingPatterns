@@ -1,30 +1,26 @@
 package lab_09.task01;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class SalesTeam {
+public class SalesTeam implements Worker {
 
-    private final List<Manager> managers = new ArrayList<>();
-    private final List<Salesperson> salespeople = new ArrayList<>();
+    private final List<Worker> workers = new ArrayList<>();
 
-    void addManager(Manager manager) {
-        managers.add(manager);
+    SalesTeam(Worker... workers) {
+		this.workers.addAll(Arrays.asList(workers));
     }
 
-    void addSalesperson(Salesperson salesperson) {
-        salespeople.add(salesperson);
+    void addWorker(Worker worker) {
+        workers.add(worker);
     }
 
     public int payExpenses() {
         System.out.println("===========================");
         int total = 0;
-        for (Manager manager : managers) {
-            total += manager.payExpenses();
-        }
-
-        for (Salesperson salesperson : salespeople) {
-            total += salesperson.payExpenses();
+        for (Worker worker : workers) {
+            total += worker.payExpenses();
         }
         System.out.println("Team was paid $" + total);
         System.out.println("===========================");

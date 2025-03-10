@@ -3,11 +3,11 @@ package lab_09.task01;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Director {
+public class Director extends SalesTeam {
 
 	private final String name;
 	private final int salary;
-	private final List<SalesTeam> salesTeams = new ArrayList<>();
+	private final List<Worker> salesTeams = new ArrayList<>();
 
 	public Director(String name, int salary) {
 		this.name = name;
@@ -18,12 +18,14 @@ public class Director {
 		salesTeams.add(salesTeam);
 	}
 
-	public void payExpenses() {
+	@Override
+	public int payExpenses() {
 		int total = 0;
 		System.out.println(name + " has been paid $" + salary);
-		for (SalesTeam salesTeam : salesTeams) {
+		for (Worker salesTeam : salesTeams) {
 			total += salesTeam.payExpenses();
 		}
 		System.out.println("All teams have been paid $" + total);
+		return total;
 	}
 }

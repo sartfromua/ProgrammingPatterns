@@ -9,22 +9,22 @@ public class ExpensesClient {
     Salesperson sue = new Salesperson("Sue", 200, jane);
 
     SalesTeam teamMeat = new SalesTeam();
-    teamMeat.addManager(jane);
-    teamMeat.addSalesperson(bob);
-    teamMeat.addSalesperson(sue);
-    teamMeat.addSalesperson(new Salesperson("John", 200, jane));
+    teamMeat.addWorker(jane);
+    teamMeat.addWorker(bob);
+    teamMeat.addWorker(sue);
+    teamMeat.addWorker(new Salesperson("John", 200, jane));
 
     SalesTeam teamMilk = new SalesTeam();
-    teamMilk.addManager(new Manager("Den", 450));
-    teamMilk.addSalesperson(new Salesperson("Antony", 220, jane));
-    teamMilk.addSalesperson(new Salesperson("Alice", 240, jane));
-    teamMilk.addSalesperson(new Salesperson("Rick", 180, jane));
+    teamMilk.addWorker(new Manager("Den", 450));
+    teamMilk.addWorker(new Salesperson("Antony", 220, jane));
+    teamMilk.addWorker(new Salesperson("Alice", 240, jane));
+    teamMilk.addWorker(new Salesperson("Rick", 180, jane));
 
     SalesTeam teamSweet = new SalesTeam();
-    teamSweet.addManager(new Manager("Kelly", 550));
-    teamSweet.addSalesperson(new Salesperson("Kate", 300, jane));
-    teamSweet.addSalesperson(new Salesperson("Lincoln", 290, jane));
-    teamSweet.addSalesperson(new Salesperson("Ted", 330, jane));
+    teamSweet.addWorker(new Manager("Kelly", 550));
+    teamSweet.addWorker(new Salesperson("Kate", 300, jane));
+    teamSweet.addWorker(new Salesperson("Lincoln", 290, jane));
+    teamSweet.addWorker(new Salesperson("Ted", 330, jane));
 
     bohdan.addTeam(teamMeat);
     bohdan.addTeam(teamMilk);
