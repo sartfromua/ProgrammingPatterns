@@ -1,0 +1,36 @@
+package lab_20.task02;
+
+public class StoppedState implements State {
+	private final MediaPlayer mediaPlayer;
+
+	StoppedState(MediaPlayer mediaPlayer) {
+		this.mediaPlayer = mediaPlayer;
+	}
+
+	@Override
+	public void play() {
+		mediaPlayer.setState(new PlayingState(mediaPlayer));
+		mediaPlayer.setTrackNum(0);
+		System.out.println("Playing " + mediaPlayer.getCurrentTrack());
+	}
+
+	@Override
+	public void pause() {
+
+	}
+
+	@Override
+	public void next() {
+
+	}
+
+	@Override
+	public void prev() {
+
+	}
+
+	@Override
+	public void stop() {
+
+	}
+}
